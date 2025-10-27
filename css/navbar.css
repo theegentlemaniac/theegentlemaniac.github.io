@@ -1,0 +1,187 @@
+/* ===== Navigation ===== */
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 24px 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    transition: padding 0.6s ease, backdrop-filter 0.6s ease, border-color 0.6s ease;
+    background: transparent;
+    border-bottom: 1px solid transparent;
+    backdrop-filter: blur(0px);
+}
+
+nav.scrolled {
+    padding: 14px 60px;
+    backdrop-filter: blur(16px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    background: rgba(15, 16, 28, 0.35);
+}
+
+.logo {
+    font-size: 26px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #fff;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo span {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--accent);
+    box-shadow: 0 0 12px rgba(0, 229, 255, 0.75);
+}
+
+.nav-links {
+    display: flex;
+    gap: 32px;
+}
+
+.nav-links a {
+    position: relative;
+    padding: 8px 0;
+    font-size: 14px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    transition: color var(--transition-base);
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--accent), var(--primary));
+    bottom: -6px;
+    left: 0;
+    transition: width 0.4s ease;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: #fff;
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+    width: 100%;
+}
+
+.menu-toggle {
+    border: none;
+    background: none;
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+    font-family: inherit;
+    display: none;
+}
+
+.menu-toggle__bg {
+    border-radius: 16px;
+    border: 1px solid rgba(26, 26, 26, 0.85);
+    background: rgba(74, 74, 74, 0.39);
+    mix-blend-mode: luminosity;
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(15px);
+    width: 65px;
+    height: 65px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: box-shadow 0.4s ease, border-color 0.4s ease;
+}
+
+.menu__icon {
+    width: 28px;
+    height: 28px;
+    padding: 3px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.menu__icon span {
+    width: 100%;
+    height: 0.125rem;
+    border-radius: 0.125rem;
+    background-color: rgb(0, 122, 255);
+    box-shadow: 0 0.5px 2px rgba(0, 0, 0, 0.2);
+    transition: transform 0.4s, background-color 0.4s, width 0.4s, opacity 0.4s;
+}
+
+.menu__icon span:nth-child(2) {
+    width: 60%;
+}
+
+.menu-toggle:hover .menu-toggle__bg {
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35);
+    border-color: rgba(26, 26, 26, 0.45);
+}
+
+.menu-toggle:hover .menu__icon span:nth-child(1) {
+    background-color: rgb(255, 59, 48);
+    transform: translateY(7.5px) rotate(-45deg);
+}
+
+.menu-toggle:hover .menu__icon span:nth-child(2) {
+    width: 0;
+    opacity: 0;
+}
+
+.menu-toggle:hover .menu__icon span:nth-child(3) {
+    background-color: rgb(255, 59, 48);
+    transform: translateY(-7.5px) rotate(45deg);
+}
+
+@media (max-width: 900px) {
+    nav {
+        padding: 18px 30px;
+    }
+
+    nav.scrolled {
+        padding: 12px 30px;
+    }
+
+    .nav-links {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: rgba(15, 16, 28, 0.92);
+        flex-direction: column;
+        align-items: center;
+        padding: 24px 0;
+        gap: 20px;
+        transform: translateY(-20px);
+        opacity: 0;
+        pointer-events: none;
+        transition: transform 0.4s ease, opacity 0.4s ease;
+        backdrop-filter: blur(16px);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .nav-links.active {
+        transform: translateY(0);
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+    .menu-toggle {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}

@@ -1,0 +1,209 @@
+/* ===== Hero Section ===== */
+.hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    padding: clamp(140px, 16vh, 220px) clamp(24px, 6vw, 80px) clamp(110px, 12vh, 160px);
+}
+
+.hero::before,
+.hero::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 20% 20%, rgba(108, 99, 255, 0.35), transparent 45%);
+    z-index: 1;
+}
+
+.hero::after {
+    background: radial-gradient(circle at 80% 80%, rgba(0, 229, 255, 0.25), transparent 50%);
+}
+
+.parallax-bg {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(120deg, rgba(12, 17, 34, 0.9), rgba(12, 13, 24, 0.5)),
+                url('https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=2000&q=80') center/cover;
+    z-index: 0;
+    transform: translateZ(-1px) scale(2);
+    filter: saturate(110%);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    max-width: 780px;
+    padding: clamp(36px, 5vw, 52px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: clamp(18px, 3vw, 28px);
+    border-radius: 28px;
+    background: rgba(13, 14, 26, 0.52);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(20px);
+    box-shadow: 0 35px 90px rgba(9, 11, 25, 0.55);
+}
+
+.typing-greeting {
+    font-family: 'Righteous', 'Space Grotesk', sans-serif;
+    font-size: clamp(32px, 4vw, 48px);
+    color: var(--accent);
+    min-height: 1.2em;
+    letter-spacing: 0.05em;
+    opacity: 0;
+}
+
+.typing-greeting.active {
+    opacity: 1;
+}
+
+.hero .profile-img {
+    width: 190px;
+    height: 190px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid rgba(108, 99, 255, 0.4);
+    box-shadow: 0 0 50px rgba(108, 99, 255, 0.6);
+    margin: 12px auto 8px;
+    animation: pulseGlow 4s ease-in-out infinite;
+}
+
+.hero-name {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.hero-name .masked-text {
+    font-family: 'Righteous', 'Space Grotesk', sans-serif;
+    font-size: clamp(48px, 6vw, 88px);
+    font-weight: 400;
+    letter-spacing: 0.06em;
+    line-height: 1.1;
+    color: #fff;
+    text-shadow: 0 4px 24px rgba(108,99,255,0.4), 0 2px 12px rgba(0,229,255,0.3);
+    padding: 0.15em 0.2em;
+    opacity: 0;
+    text-transform: uppercase;
+}
+
+@keyframes fadeInName {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero p.subtitle {
+    font-size: 20px;
+    color: var(--muted);
+    letter-spacing: 0.04em;
+    text-transform: none;
+}
+
+.hero .roles {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 14px;
+}
+
+.hero .roles span {
+    padding: 10px 20px;
+    border-radius: 999px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: rgba(255, 255, 255, 0.06);
+    font-size: 13px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    transition: transform var(--transition-base), border-color var(--transition-base), box-shadow var(--transition-base);
+}
+
+.hero .roles span:hover {
+    transform: translateY(-3px);
+    border-color: rgba(255, 255, 255, 0.18);
+    box-shadow: 0 16px 28px rgba(108, 99, 255, 0.18);
+}
+
+.hero .tagline {
+    margin-bottom: 6px;
+    letter-spacing: 0.12em;
+}
+
+.typing-line {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 22px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    font-size: 15px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.typed-label {
+    color: rgba(255, 255, 255, 0.65);
+}
+
+.typed-text {
+    color: var(--accent);
+    min-width: 160px;
+}
+
+@keyframes pulseGlow {
+    0%, 100% {
+        box-shadow: 0 0 35px rgba(108, 99, 255, 0.6);
+        transform: scale(1);
+    }
+    50% {
+        box-shadow: 0 0 65px rgba(108, 99, 255, 0.9);
+        transform: scale(1.04);
+    }
+}
+
+@keyframes heroNameSweep {
+    from {
+        background-position: 0 50%;
+    }
+    to {
+        background-position: 100% 50%;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero {
+        padding: 130px 24px 100px;
+    }
+
+    .hero-content {
+        padding: 32px;
+        gap: 20px;
+    }
+
+    .hero-name .masked-text {
+        font-size: clamp(38px, 9vw, 64px);
+        letter-spacing: 0.12em;
+        padding: 0.1em 0.15em;
+    }
+
+    .hero .profile-img {
+        width: 150px;
+        height: 150px;
+    }
+
+    .typing-line {
+        font-size: 13px;
+        padding: 10px 18px;
+    }
+}

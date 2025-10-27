@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ndumiso Maphanga | Creative Technologist</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/loader.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/hero.css">
+    <link rel="stylesheet" href="css/sections.css">
+    <link rel="stylesheet" href="css/tech-stack.css">
+</head>
+<body class="loading">
+    <div id="site-loader" aria-hidden="true">
+        <div class="main-container">
+            <div class="loader">
+                <svg viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <linearGradient id="chipGradient" x1="0" y1="0" x2="0" y2="1">
+                            <stop offset="0%" stop-color="#2d2d2d"></stop>
+                            <stop offset="100%" stop-color="#0f0f0f"></stop>
+                        </linearGradient>
+                        <linearGradient id="textGradient" x1="0" y1="0" x2="0" y2="1">
+                            <stop offset="0%" stop-color="#eeeeee"></stop>
+                            <stop offset="100%" stop-color="#888888"></stop>
+                        </linearGradient>
+                        <linearGradient id="pinGradient" x1="1" y1="0" x2="0" y2="0">
+                            <stop offset="0%" stop-color="#bbbbbb"></stop>
+                            <stop offset="50%" stop-color="#888888"></stop>
+                            <stop offset="100%" stop-color="#555555"></stop>
+                        </linearGradient>
+                    </defs>
+                    <g id="traces">
+                        <path d="M100 100 H200 V210 H326" class="trace-bg"></path>
+                        <path d="M100 100 H200 V210 H326" class="trace-flow purple"></path>
+                        <path d="M80 180 H180 V230 H326" class="trace-bg"></path>
+                        <path d="M80 180 H180 V230 H326" class="trace-flow blue"></path>
+                        <path d="M60 260 H150 V250 H326" class="trace-bg"></path>
+                        <path d="M60 260 H150 V250 H326" class="trace-flow yellow"></path>
+                        <path d="M100 350 H200 V270 H326" class="trace-bg"></path>
+                        <path d="M100 350 H200 V270 H326" class="trace-flow green"></path>
+                        <path d="M700 90 H560 V210 H474" class="trace-bg"></path>
+                        <path d="M700 90 H560 V210 H474" class="trace-flow blue"></path>
+                        <path d="M740 160 H580 V230 H474" class="trace-bg"></path>
+                        <path d="M740 160 H580 V230 H474" class="trace-flow green"></path>
+                        <path d="M720 250 H590 V250 H474" class="trace-bg"></path>
+                        <path d="M720 250 H590 V250 H474" class="trace-flow red"></path>
+                        <path d="M680 340 H570 V270 H474" class="trace-bg"></path>
+                        <path d="M680 340 H570 V270 H474" class="trace-flow yellow"></path>
+                    </g>
+                    <rect x="330" y="190" width="140" height="100" rx="20" ry="20" fill="url(#chipGradient)" stroke="#222" stroke-width="3"></rect>
+                    <g>
+                        <rect x="322" y="205" width="8" height="10" fill="url(#pinGradient)" rx="2"></rect>
+                        <rect x="322" y="225" width="8" height="10" fill="url(#pinGradient)" rx="2"></rect>
+                        <rect x="322" y="245" width="8" height="10" fill="url(#pinGradient)" rx="2"></rect>
+                        <rect x="322" y="265" width="8" height="10" fill="url(#pinGradient)" rx="2"></rect>
+                    </g>
+                    <g>
+                        <rect x="470" y="205" width="8" height="10" fill="url(#pinGradient)" rx="2"></rect>
+                        <rect x="470" y="225" width="8" height="10" fill="url(#pinGradient)" rx="2"></rect>
+                        <rect x="470" y="245" width="8" height="10" fill="url(#pinGradient)" rx="2"></rect>
+                        <rect x="470" y="265" width="8" height="10" fill="url(#pinGradient)" rx="2"></rect>
+                    </g>
+                    <text x="400" y="240" font-family="Arial, sans-serif" font-size="22" fill="url(#textGradient)" text-anchor="middle">Loading</text>
+                    <circle cx="100" cy="100" r="5" fill="black"></circle>
+                    <circle cx="80" cy="180" r="5" fill="black"></circle>
+                    <circle cx="60" cy="260" r="5" fill="black"></circle>
+                    <circle cx="100" cy="350" r="5" fill="black"></circle>
+                    <circle cx="700" cy="90" r="5" fill="black"></circle>
+                    <circle cx="740" cy="160" r="5" fill="black"></circle>
+                    <circle cx="720" cy="250" r="5" fill="black"></circle>
+                    <circle cx="680" cy="340" r="5" fill="black"></circle>
+                </svg>
+            </div>
+        </div>
+    </div>
+
+    <div class="page-wrapper">
+        <nav id="navbar">
+            <a href="#home" class="logo">Ndumiso<span></span></a>
+            <div class="nav-links">
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#projects">Work</a>
+                <a href="#tech-lab">Lab</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <button class="menu-toggle" aria-label="Toggle navigation">
+                <span class="menu-toggle__bg">
+                    <span class="menu__icon">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </span>
+                </span>
+            </button>
+        </nav>
+
+    <section id="home" class="hero">
+            <div class="parallax-bg" aria-hidden="true"></div>
+            <div class="hero-content reveal">
+                <div class="typing-greeting"></div>
+                <span class="tagline"><i class="fas fa-bolt"></i> Future-Ready Storytelling</span>
+                <img src="images/profile.jpg" alt="Portrait of Ndumiso Maphanga" class="profile-img">
+                <h1 class="hero-name" aria-label="Ndumiso">
+                    <span class="masked-text" aria-hidden="true">Ndumiso</span>
+                </h1>
+                <p class="subtitle">Designing motion, meaning, and memorable digital journeys.</p>
+                <div class="roles">
+                    <span>Multi-Disciplinary Creative</span>
+                    <span>Web & Motion Designer</span>
+                    <span>Strategy-Led Problem Solver</span>
+                </div>
+                <div class="typing-line" aria-live="polite">
+                    <span class="typed-label">Creative Focus:</span>
+                    <span class="typed-text"></span>
+                </div>
+                <div class="cta-group">
+                    <a href="#projects" class="btn">Explore Work</a>
+                    <a href="#contact" class="btn btn-outline">Let's Collaborate</a>
+                    <a href="Ndumiso Resume.pdf" download class="btn btn-download"><i class="fas fa-download"></i> Resume</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="reveal pattern-section">
+            <h2 class="section-title">Who I Am</h2>
+            <div class="about-content">
+                <div class="about-text reveal">
+                    <h3>Creative technologist crafting immersive brand moments.</h3>
+                    <p>I'm Ndumiso Maphanga, a BSc Computer Science student at the University of the Witwatersrand with a passion for AI, video editing, graphic design, and web development.</p>
+                    <p>Every brief becomes a playground to merge storytelling with practical tech—building interfaces, motion systems, and visual narratives that feel intentional, impactful, and future-ready.</p>
+                    <div class="skills-grid reveal">
+                        <span class="skill-pill"><i class="fas fa-pen-nib"></i> Art Direction</span>
+                        <span class="skill-pill"><i class="fas fa-photo-video"></i> Motion Design</span>
+                        <span class="skill-pill"><i class="fas fa-code"></i> Frontend Engineering</span>
+                        <span class="skill-pill"><i class="fas fa-brain"></i> Creative Strategy</span>
+                        <span class="skill-pill"><i class="fas fa-vr-cardboard"></i> Experiential Media</span>
+                        <span class="skill-pill"><i class="fas fa-lightbulb"></i> Concept Development</span>
+                    </div>
+                </div>
+                <div class="about-visual reveal">
+                    <div class="video-card-stack">
+                        <div class="card">
+                            <div class="video-container">
+                                <video autoplay muted loop playsinline>
+                                    <source src="images/vid1.mp4" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
+                                <div class="video-overlay">
+                                    <p class="text-title">Narrative Motion</p>
+                                    <p class="text-body">Cinematic edits guiding story-driven product reveals.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="video-container">
+                                <video autoplay muted loop playsinline>
+                                    <source src="images/vid2.mp4" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
+                                <div class="video-overlay">
+                                    <p class="text-title">Live Experience</p>
+                                    <p class="text-body">Event visuals built for stage screens and immersive booths.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="projects reveal pattern-section">
+            <h2 class="section-title">Selected Work</h2>
+            <div class="projects-grid">
+                <article class="project-card reveal logo-card">
+                    <img src="images/orion_logo.png" alt="Orion trail discovery platform">
+                    <div class="project-info">
+                        <h3>Orion</h3>
+                        <p>Trail discovery and navigation companion guiding millions of outdoor lovers with curated routes, live alerts, and community tales built on trusted data.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">React</span>
+                            <span class="tech-tag">Firebase</span>
+                            <span class="tech-tag">Tailwind CSS</span>
+                            <span class="tech-tag">Mapbox</span>
+                        </div>
+                        <a href="https://orion-sdp.web.app/" class="project-link" target="_blank" rel="noopener">Explore Orion <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+                <article class="project-card reveal">
+                    <img src="images/mushroom.png" alt="Mushroom knowledge discovery engine interface">
+                    <div class="project-info">
+                        <h3>Mushroom</h3>
+                        <p>Knowledge discovery engine helping universities surface research, future-proof treasuries, and uplift society while matching learners with the right academic mentors.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">React</span>
+                            <span class="tech-tag">Vite</span>
+                            <span class="tech-tag">Tailwind CSS</span>
+                            <span class="tech-tag">npm</span>
+                        </div>
+                        <a href="https://www.mushxroom.com/" class="project-link" target="_blank" rel="noopener">Launch Mushroom <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+                <article class="project-card reveal">
+                    <img src="images/SportPulse.png" alt="SportPulse multi-sport headlines">
+                    <div class="project-info">
+                        <h3>SportPulse</h3>
+                        <p>All-in-one sports hub streaming football, NBA, and F1 news through Python-powered scraping pipelines with a responsive JS experience.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Selenium</span>
+                            <span class="tech-tag">BeautifulSoup</span>
+                            <span class="tech-tag">JavaScript</span>
+                        </div>
+                        <a href="https://sportpulse.onrender.com/" class="project-link" target="_blank" rel="noopener">Open SportPulse <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+                <article class="project-card reveal">
+                    <img src="https://images.unsplash.com/photo-1523875194681-bedd468c58bf?auto=format&fit=crop&w=900&q=80" alt="Interactive launch">
+                    <div class="project-info">
+                        <h3>Launch BlackBox</h3>
+                        <p>Immersive product launch toolkit mixing teaser films, social loops, and a tactile web experience built for momentum.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Cinema 4D</span>
+                            <span class="tech-tag">Framer</span>
+                            <span class="tech-tag">Adobe CC</span>
+                        </div>
+                        <a href="#" class="project-link">See rollout <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section id="tech-lab" class="tech-stack-section reveal pattern-section">
+            <h2 class="section-title">Creative Lab</h2>
+            <div class="tech-stack-layout reveal">
+                <div id="lang-drawer" aria-label="Interactive skill drawer">
+                    <div class="drawer-stage">
+                        <div class="chest">
+                            <div class="chest__panel chest__panel--back"></div>
+                            <div class="chest__panel chest__panel--top"></div>
+                            <div class="chest__panel chest__panel--bottom"></div>
+                            <div class="chest__panel chest__panel--right"></div>
+                            <div class="chest__panel chest__panel--front">
+                                <div class="chest__panel chest__panel--front-frame">
+                                    <div class="divider"></div>
+                                    <div class="divider"></div>
+                                    <div class="divider"></div>
+                                </div>
+                            </div>
+                            <div class="chest__panel chest__panel--left"></div>
+                            <div class="chest__drawer drawer" data-position="1">
+                                <details>
+                                    <summary></summary>
+                                </details>
+                                <div class="drawer__structure">
+                                    <div class="drawer__panel drawer__panel--back"><span class="lang-label" style="--lang-hue: 200">React</span></div>
+                                    <div class="drawer__panel drawer__panel--bottom"></div>
+                                    <div class="drawer__panel drawer__panel--right"></div>
+                                    <div class="drawer__panel drawer__panel--left"></div>
+                                    <div class="drawer__panel drawer__panel--front"></div>
+                                </div>
+                            </div>
+                            <div class="chest__drawer drawer" data-position="2">
+                                <details>
+                                    <summary></summary>
+                                </details>
+                                <div class="drawer__structure">
+                                    <div class="drawer__panel drawer__panel--back"><span class="lang-label" style="--lang-hue: 210">Python</span></div>
+                                    <div class="drawer__panel drawer__panel--bottom"></div>
+                                    <div class="drawer__panel drawer__panel--right"></div>
+                                    <div class="drawer__panel drawer__panel--left"></div>
+                                    <div class="drawer__panel drawer__panel--front"></div>
+                                </div>
+                            </div>
+                            <div class="chest__drawer drawer" data-position="3">
+                                <details>
+                                    <summary></summary>
+                                </details>
+                                <div class="drawer__structure">
+                                    <div class="drawer__panel drawer__panel--back"><span class="lang-label" style="--lang-hue: 40">Java</span></div>
+                                    <div class="drawer__panel drawer__panel--bottom"></div>
+                                    <div class="drawer__panel drawer__panel--right"></div>
+                                    <div class="drawer__panel drawer__panel--left"></div>
+                                    <div class="drawer__panel drawer__panel--front"></div>
+                                </div>
+                            </div>
+                            <div class="chest__drawer drawer" data-position="4">
+                                <details>
+                                    <summary></summary>
+                                </details>
+                                <div class="drawer__structure">
+                                    <div class="drawer__panel drawer__panel--back"><span class="lang-label" style="--lang-hue: 160">C++</span></div>
+                                    <div class="drawer__panel drawer__panel--bottom"></div>
+                                    <div class="drawer__panel drawer__panel--right"></div>
+                                    <div class="drawer__panel drawer__panel--left"></div>
+                                    <div class="drawer__panel drawer__panel--front"></div>
+                                </div>
+                            </div>
+                            <div class="chest__drawer drawer" data-position="5">
+                                <details>
+                                    <summary></summary>
+                                </details>
+                                <div class="drawer__structure">
+                                    <div class="drawer__panel drawer__panel--back"><span class="lang-label" style="--lang-hue: 280">Three.js</span></div>
+                                    <div class="drawer__panel drawer__panel--bottom"></div>
+                                    <div class="drawer__panel drawer__panel--right"></div>
+                                    <div class="drawer__panel drawer__panel--left"></div>
+                                    <div class="drawer__panel drawer__panel--front"></div>
+                                </div>
+                            </div>
+                            <div class="chest__drawer drawer" data-position="6">
+                                <details>
+                                    <summary></summary>
+                                </details>
+                                <div class="drawer__structure">
+                                    <div class="drawer__panel drawer__panel--back"><span class="lang-label" style="--lang-hue: 200">SQL</span></div>
+                                    <div class="drawer__panel drawer__panel--bottom"></div>
+                                    <div class="drawer__panel drawer__panel--right"></div>
+                                    <div class="drawer__panel drawer__panel--left"></div>
+                                    <div class="drawer__panel drawer__panel--front"></div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="reveal pattern-section">
+            <h2 class="section-title">Let's Build</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item reveal">
+                        <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+                        <div class="contact-text">
+                            <h3>Based In</h3>
+                            <p>Johannesburg, South Africa</p>
+                        </div>
+                    </div>
+                    <div class="contact-item reveal">
+                        <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+                        <div class="contact-text">
+                            <h3>Email</h3>
+                            <p><a href="mailto:nmsmaphanga@gmail.com">nmsmaphanga@gmail.com</a></p>
+                        </div>
+                    </div>
+                    <div class="contact-item reveal">
+                        <div class="contact-icon"><i class="fas fa-phone"></i></div>
+                        <div class="contact-text">
+                            <h3>Direct Line</h3>
+                            <p>067 350 9278</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form reveal">
+                    <form action="#" method="post">
+                        <div class="form-group">
+                            <input type="text" name="name" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" name="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="subject" placeholder="Project Subject" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea name="message" placeholder="Tell me about the idea" required></textarea>
+                        </div>
+                        <button type="submit" class="btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <footer class="pattern-section">
+            <div class="footer-content">
+                <div class="footer-logo">Ndumiso<span></span></div>
+                <div class="social-links">
+                    <a href="https://github.com/theegentlemaniac" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://www.behance.net" aria-label="Behance"><i class="fab fa-behance"></i></a>
+                    <a href="https://www.instagram.com" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <p>&copy; <span id="year"></span> Ndumiso Maphanga. Crafted with curiosity and care.</p>
+        </footer>
+    </div>
+
+    <script>
+        const yearElement = document.getElementById('year');
+        if (yearElement) {
+            yearElement.textContent = new Date().getFullYear();
+        }
+    </script>
+    <script src="js/main.js"></script>
+</body>
+</html>

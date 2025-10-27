@@ -1,0 +1,525 @@
+/* ===== About Section ===== */
+#about {
+    background: linear-gradient(180deg, 
+        rgba(12, 12, 24, 0.95) 0%, 
+        rgba(18, 18, 32, 0.98) 100%);
+}
+
+.about-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: clamp(40px, 5vw, 70px);
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.about-text {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    max-width: 560px;
+}
+
+.about-text h3 {
+    font-size: 28px;
+    margin-bottom: 18px;
+    color: var(--accent);
+    letter-spacing: 0.04em;
+}
+
+.about-text p {
+    line-height: 1.85;
+    margin-bottom: 20px;
+    color: var(--muted);
+}
+
+.signature {
+    margin-top: 24px;
+    font-family: 'Pacifico', cursive;
+    font-size: 26px;
+    color: #fff;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 18px;
+    margin-top: 34px;
+}
+
+.skill-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 18px;
+    border-radius: 18px;
+    background: rgba(108, 99, 255, 0.14);
+    border: 1px solid rgba(108, 99, 255, 0.28);
+    font-size: 13px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    transition: transform var(--transition-base), box-shadow var(--transition-base), border-color var(--transition-base);
+}
+
+.skill-pill:hover {
+    transform: translateY(-4px) scale(1.01);
+    border-color: rgba(0, 229, 255, 0.32);
+    box-shadow: 0 18px 32px rgba(0, 229, 255, 0.18);
+}
+
+.about-visual {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: clamp(24px, 5vw, 32px);
+}
+
+.video-card-stack {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: clamp(28px, 5vw, 42px);
+    justify-items: center;
+    align-items: center;
+    max-width: clamp(520px, 48vw, 600px);
+    transform: translateX(56px);
+}
+
+.video-card-stack .card {
+    --tx: 0px;
+    --ty: 0px;
+    width: clamp(230px, 28vw, 310px);
+    height: clamp(300px, 32vw, 360px);
+    border-radius: 28px;
+    background: rgba(245, 245, 245, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    overflow: hidden;
+    box-shadow: 0 30px 70px rgba(8, 10, 24, 0.52);
+    transform: translate(var(--tx), var(--ty));
+    transition: transform var(--transition-base), box-shadow var(--transition-base), border-color var(--transition-base);
+}
+
+.video-card-stack .card:nth-child(1) {
+    --tx: -58px;
+    --ty: -40px;
+}
+
+.video-card-stack .card:nth-child(2) {
+    --tx: 58px;
+    --ty: 40px;
+}
+
+.video-card-stack .card:hover {
+    transform: translate(var(--tx), calc(var(--ty) - 16px)) scale(1.02);
+    box-shadow: 0 36px 80px rgba(9, 12, 30, 0.7);
+    border-color: rgba(0, 229, 255, 0.28);
+}
+
+.video-container {
+    width: 100%;
+    height: 100%;
+    border-radius: 24px;
+    overflow: hidden;
+    position: relative;
+}
+
+.video-container video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.video-overlay,
+.text-title,
+.text-body {
+    display: none !important;
+}
+
+@media (max-width: 900px) {
+    .video-card-stack {
+        transform: translateX(24px);
+    }
+}
+
+@media (max-width: 720px) {
+    .video-card-stack {
+        transform: translateX(0);
+        grid-template-columns: 1fr;
+    }
+
+    .video-card-stack .card {
+        --tx: 0px;
+        --ty: 0px;
+        width: clamp(220px, 70vw, 280px);
+        height: clamp(280px, 76vw, 340px);
+    }
+
+    .video-card-stack .card:hover {
+        transform: translateY(-12px) scale(1.02);
+    }
+}
+
+.tech-stack-section {
+    position: relative;
+    padding: clamp(100px, 12vw, 140px) clamp(24px, 6vw, 80px);
+    background: linear-gradient(180deg, 
+        rgba(14, 14, 26, 0.95) 0%, 
+        rgba(16, 16, 28, 0.98) 100%);
+}
+
+.tech-stack-section.pattern-section {
+    background: linear-gradient(180deg, 
+        rgba(14, 14, 26, 0.95) 0%, 
+        rgba(16, 16, 28, 0.98) 50%,
+        rgba(14, 14, 26, 0.95) 100%);
+}
+
+.tech-stack-layout {
+    /* Do not create an inner full-bleed overlay — keep container transparent so
+       the section's background/pattern can show across the full width. */
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: clamp(24px, 5vw, 44px);
+    border-radius: 20px;
+    /* Keep minimal inner surface while allowing the section background to show */
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.04);
+    box-shadow: 0 18px 36px rgba(6, 10, 24, 0.28);
+    display: grid;
+    place-items: center;
+    position: relative;
+    overflow: hidden; /* Keep drawers within container */
+    z-index: 0; /* sit behind project cards */
+}
+
+@media (max-width: 520px) {
+    .video-card-stack .card {
+        width: clamp(200px, 82vw, 260px);
+        height: clamp(260px, 88vw, 320px);
+    }
+}
+
+/* ===== Selected Work Section ===== */
+#projects {
+    background: linear-gradient(180deg, 
+        rgba(18, 18, 32, 0.98) 0%, 
+        rgba(14, 14, 26, 0.95) 100%);
+}
+
+.projects {
+    width: min(1180px, 100%);
+    margin: 0 auto;
+    position: relative;
+    z-index: 2; /* ensure projects/cards sit above Creative Lab */
+}
+
+/* Make the pattern for Selected Work span the full viewport width (full-bleed)
+   while remaining vertically limited to the section height. This overrides
+   the default inset-based pseudo so the pattern isn't clipped to the inner
+   container when the page is wide. */
+/* Removed - now handled by base.css global .pattern-section::before */
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: clamp(26px, 4vw, 40px);
+}
+
+.project-card {
+    display: flex;
+    flex-direction: column;
+    background: rgba(14, 16, 28, 0.65);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 26px;
+    overflow: hidden;
+    transition: transform var(--transition-base), box-shadow var(--transition-base), border-color var(--transition-base);
+    min-height: 100%;
+    position: relative;
+    z-index: 3; /* highest within projects */
+}
+
+.project-card:hover {
+    transform: translateY(-12px);
+    border-color: rgba(0, 229, 255, 0.28);
+    box-shadow: 0 30px 48px rgba(0, 229, 255, 0.14);
+}
+
+.project-card.compact {
+    max-width: 420px;
+}
+
+.project-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    transition: transform var(--transition-base);
+}
+
+.project-card.logo-card img {
+    object-fit: contain;
+    padding: 26px;
+    background: rgba(12, 13, 24, 0.65);
+}
+
+.project-card.logo-card:hover img {
+    transform: scale(1.02);
+}
+
+.project-card:hover img {
+    transform: scale(1.05);
+}
+
+.project-info {
+    padding: 28px;
+}
+
+.project-info h3 {
+    font-size: 22px;
+    margin-bottom: 12px;
+    color: #fff;
+}
+
+.project-info p {
+    color: var(--muted);
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.project-tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 18px;
+}
+
+.tech-tag {
+    padding: 6px 12px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.08);
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.project-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--accent);
+    font-weight: 600;
+    transition: gap var(--transition-base), transform var(--transition-base);
+}
+
+.project-link:hover {
+    gap: 14px;
+    transform: translateX(4px);
+}
+
+/* ===== Contact Section ===== */
+#contact {
+    background: linear-gradient(180deg, 
+        rgba(16, 16, 28, 0.98) 0%, 
+        rgba(12, 12, 20, 0.95) 100%);
+}
+
+.contact-content {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 50px;
+}
+
+.contact-info {
+    display: grid;
+    gap: 24px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 18px 22px;
+    border-radius: 20px;
+    background: rgba(21, 22, 32, 0.55);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: transform var(--transition-base), box-shadow var(--transition-base), border-color var(--transition-base);
+}
+
+.contact-icon {
+    width: 58px;
+    height: 58px;
+    border-radius: 18px;
+    background: rgba(108, 99, 255, 0.18);
+    border: 1px solid rgba(108, 99, 255, 0.35);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    color: var(--accent);
+}
+
+.contact-item:hover {
+    transform: translateY(-6px);
+    border-color: rgba(0, 229, 255, 0.24);
+    box-shadow: 0 22px 38px rgba(0, 229, 255, 0.18);
+}
+
+.contact-text h3 {
+    font-size: 18px;
+    margin-bottom: 4px;
+    letter-spacing: 0.04em;
+}
+
+.contact-text p {
+    color: var(--muted);
+}
+
+.contact-form form {
+    display: grid;
+    gap: 20px;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 18px;
+    background: rgba(15, 16, 28, 0.55);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    color: #fff;
+    font-size: 15px;
+    transition: border-color var(--transition-base), transform var(--transition-base), box-shadow var(--transition-base);
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--accent);
+    transform: translateY(-2px);
+    box-shadow: 0 18px 32px rgba(0, 229, 255, 0.16);
+}
+
+.form-group textarea {
+    height: 160px;
+    resize: vertical;
+}
+
+/* ===== Footer ===== */
+footer {
+    background: linear-gradient(180deg, 
+        rgba(12, 12, 20, 0.95) 0%, 
+        rgba(8, 8, 14, 1) 100%);
+    padding: 70px clamp(24px, 6vw, 80px) 40px;
+    border-top: 1px solid rgba(108, 99, 255, 0.2);
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1100px;
+    margin: 0 auto 40px;
+    flex-wrap: wrap;
+    gap: 24px;
+}
+
+.footer-logo {
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+.social-links {
+    display: flex;
+    gap: 18px;
+}
+
+.social-links a {
+    width: 42px;
+    height: 42px;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.05);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    transition: transform var(--transition-base), background var(--transition-base), box-shadow var(--transition-base);
+}
+
+.social-links a:hover {
+    transform: translateY(-6px);
+    background: linear-gradient(135deg, rgba(108, 99, 255, 0.55), rgba(0, 229, 255, 0.55));
+    box-shadow: 0 20px 32px rgba(0, 229, 255, 0.22);
+}
+
+footer p {
+    color: var(--muted);
+    font-size: 14px;
+    letter-spacing: 0.05em;
+}
+
+/* ===== Responsive Adjustments ===== */
+@media (max-width: 768px) {
+    section {
+        padding: 80px 24px;
+    }
+
+    section:not(:first-of-type)::after,
+    section:not(#home)::before {
+        width: 95%;
+    }
+
+    .section-title {
+        font-size: 28px;
+        margin-bottom: 40px;
+    }
+
+    .about-text h3 {
+        font-size: 24px;
+    }
+
+    .contact-item {
+        padding: 16px 18px;
+    }
+
+    .projects-grid {
+        gap: clamp(20px, 5vw, 28px);
+    }
+
+    .project-card {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    section {
+        padding: 60px 18px;
+    }
+
+    .section-title {
+        font-size: 24px;
+        margin-bottom: 32px;
+    }
+
+    .project-info {
+        padding: 20px;
+    }
+
+    .contact-content {
+        gap: 32px;
+    }
+}
+
+@media (max-width: 640px) {
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .tech-stack-layout {
+        padding: clamp(28px, 12vw, 40px);
+    }
+}
